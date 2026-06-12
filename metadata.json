@@ -1,0 +1,6 @@
+{
+  "name": "GreenNest",
+  "description": "GreenNest is an Online Nursery & Gardening Services Platform where users can purchase plants, seeds, and gardening products, and book verified gardeners for home services.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
