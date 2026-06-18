@@ -33,6 +33,7 @@ import {
   Info
 } from 'lucide-react';
 import { User, Product, Order, ServiceBooking, Dispute, Review } from '../types';
+import { getProductDataUri, getProductImage } from '../utils/productImages';
 
 interface AdminPortalProps {
   users: User[];
@@ -1318,11 +1319,11 @@ export default function AdminPortal({
                           <td className="px-4 py-3 min-w-[180px]">
                             <div className="flex items-center gap-3">
                               <img 
-                                src={p.image} 
+                                src={p.image || getProductImage(p.id, p.name, p.category)} 
                                 alt={p.name} 
                                 referrerPolicy="no-referrer"
                                 onError={(e) => {
-                                  e.currentTarget.src = 'https://images.unsplash.com/photo-1545241047-6083a3684587?w=400&auto=format&fit=crop&q=80';
+                                  e.currentTarget.src = getProductDataUri(p.id, p.name, p.category);
                                 }}
                                 className="h-10 w-10 object-cover rounded-md border" 
                               />

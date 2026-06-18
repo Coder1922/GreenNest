@@ -22,6 +22,7 @@ import {
   ShieldAlert
 } from 'lucide-react';
 import { User, Product, Order, ServiceBooking, Review, GardenerService } from '../types';
+import { getProductDataUri, getProductImage } from '../utils/productImages';
 
 interface VendorPortalProps {
   currentUser: User;
@@ -718,11 +719,11 @@ export default function VendorPortal({
                           <tr key={p.id} className="border-b border-gray-50 hover:bg-emerald-50/10 text-center">
                             <td className="px-6 py-4 text-left font-bold text-emerald-950 flex items-center gap-3">
                               <img
-                                src={p.image}
+                                src={p.image || getProductImage(p.id, p.name, p.category)}
                                 alt={p.name}
                                 referrerPolicy="no-referrer"
                                 onError={(e) => {
-                                  e.currentTarget.src = 'https://images.unsplash.com/photo-1545241047-6083a3684587?w=400&q=80';
+                                  e.currentTarget.src = getProductDataUri(p.id, p.name, p.category);
                                 }}
                                 className="h-10 w-10 object-cover rounded-lg border"
                               />

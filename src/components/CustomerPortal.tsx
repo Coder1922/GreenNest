@@ -26,6 +26,7 @@ import {
   Download
 } from 'lucide-react';
 import { Product, CartItem, User, Order, ServiceBooking, Review, Dispute, GardenerService } from '../types';
+import { getProductDataUri, getProductImage } from '../utils/productImages';
 
 interface CustomerPortalProps {
   products: Product[];
@@ -627,11 +628,11 @@ export default function CustomerPortal({
                       {/* Product Image */}
                       <div className="relative aspect-video w-full bg-gray-100 overflow-hidden">
                         <img
-                          src={p.image}
+                          src={p.image || getProductImage(p.id, p.name, p.category)}
                           alt={p.name}
                           referrerPolicy="no-referrer"
                           onError={(e) => {
-                            e.currentTarget.src = 'https://images.unsplash.com/photo-1545241047-6083a3684587?w=400&q=80';
+                            e.currentTarget.src = getProductDataUri(p.id, p.name, p.category);
                           }}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         />
@@ -1277,11 +1278,11 @@ export default function CustomerPortal({
                         <div key={idx} className="flex items-center justify-between">
                           <div className="flex items-center gap-3">
                             <img
-                              src={item.image}
+                              src={item.image || getProductImage(item.productId, item.productName)}
                               alt={item.productName}
                               referrerPolicy="no-referrer"
                               onError={(e) => {
-                                e.currentTarget.src = 'https://images.unsplash.com/photo-1545241047-6083a3684587?w=400&q=80';
+                                e.currentTarget.src = getProductDataUri(item.productId, item.productName);
                               }}
                               className="w-10 h-10 object-cover rounded-lg border"
                             />
@@ -1635,11 +1636,11 @@ export default function CustomerPortal({
               {/* Image and Basic Reviews info */}
               <div>
                 <img
-                  src={selectedProduct.image}
+                  src={selectedProduct.image || getProductImage(selectedProduct.id, selectedProduct.name, selectedProduct.category)}
                   alt={selectedProduct.name}
                   referrerPolicy="no-referrer"
                   onError={(e) => {
-                    e.currentTarget.src = 'https://images.unsplash.com/photo-1545241047-6083a3684587?w=400&q=80';
+                    e.currentTarget.src = getProductDataUri(selectedProduct.id, selectedProduct.name, selectedProduct.category);
                   }}
                   className="w-full aspect-square object-cover rounded-xl border border-gray-100 shadow-sm"
                 />
@@ -1797,11 +1798,11 @@ export default function CustomerPortal({
                 cart.map((item) => (
                   <div key={item.product.id} className="flex gap-4 border border-gray-100 p-3 rounded-xl hover:bg-gray-55/40">
                     <img
-                      src={item.product.image}
+                      src={item.product.image || getProductImage(item.product.id, item.product.name, item.product.category)}
                       alt={item.product.name}
                       referrerPolicy="no-referrer"
                       onError={(e) => {
-                        e.currentTarget.src = 'https://images.unsplash.com/photo-1545241047-6083a3684587?w=400&q=80';
+                        e.currentTarget.src = getProductDataUri(item.product.id, item.product.name, item.product.category);
                       }}
                       className="w-12 h-12 object-cover rounded-lg border"
                     />

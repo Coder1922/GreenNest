@@ -6,7 +6,7 @@
 
 This contains everything you need to run your app locally.
 
-View your app in AI Studio: https://greennest-303818126948.asia-southeast1.run.app
+View your app in AI Studio: https://ai.studio/apps/06e82ba2-df1c-44b8-80fd-40d0f3ec910c
 
 ## Run Locally
 

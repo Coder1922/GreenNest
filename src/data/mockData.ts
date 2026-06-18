@@ -1,4 +1,5 @@
 import { Product, User, Order, ServiceBooking, Dispute, Review, AppNotification } from '../types';
+import { getProductImage } from '../utils/productImages';
 
 export const INITIAL_PRODUCTS: Product[] = [
   {
@@ -15,7 +16,8 @@ export const INITIAL_PRODUCTS: Product[] = [
       difficulty: 'Easy',
       placement: 'Living room, bedroom corners, or office spaces.'
     },
-    image: 'https://images.unsplash.com/photo-1614594975525-e45190c55d0b?w=600&auto=format&fit=crop&q=80',
+    // Updated image for Monstera
+    image: getProductImage('prod-monstera', 'Monstera Deliciosa (Swiss Cheese Plant)', 'Plants'),
     sellerId: 'nursery-1',
     sellerName: 'Green Leaves Oasis',
     rating: 4.8,
@@ -35,7 +37,8 @@ export const INITIAL_PRODUCTS: Product[] = [
       difficulty: 'Easy',
       placement: 'Any room, including low-light corners or offices.'
     },
-    image: 'https://images.unsplash.com/photo-1596547609652-9cf5d8d76921?w=600&auto=format&fit=crop&q=80',
+    // Updated image for Snake Plant
+    image: getProductImage('prod-snake', 'Sansevieria Trifasciata (Snake Plant)', 'Plants'),
     sellerId: 'nursery-1',
     sellerName: 'Green Leaves Oasis',
     rating: 4.9,
@@ -55,7 +58,8 @@ export const INITIAL_PRODUCTS: Product[] = [
       difficulty: 'Moderate',
       placement: 'Warm rooms, bathrooms with windows, or shaded tabletops.'
     },
-    image: 'https://images.unsplash.com/photo-1593691509543-c55fb32e7355?w=600&auto=format&fit=crop&q=80',
+    // Updated image for Peace Lily
+    image: getProductImage('prod-peace-lily', 'Spathiphyllum (Peace Lily)', 'Plants'),
     sellerId: 'nursery-2',
     sellerName: 'Urbano Blooms',
     rating: 4.6,
@@ -75,7 +79,8 @@ export const INITIAL_PRODUCTS: Product[] = [
       difficulty: 'Challenging',
       placement: 'Dining room centerpieces, window sills, or display shelves.'
     },
-    image: 'https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?w=600&auto=format&fit=crop&q=80',
+    // Updated image for Orchid
+    image: getProductImage('prod-orchid', 'Phalaenopsis Moth Orchid', 'Plants'),
     sellerId: 'nursery-2',
     sellerName: 'Urbano Blooms',
     rating: 4.5,
@@ -95,7 +100,8 @@ export const INITIAL_PRODUCTS: Product[] = [
       difficulty: 'Moderate',
       placement: 'Patios, bright entryways, large living room corners.'
     },
-    image: 'https://images.unsplash.com/photo-1597055181300-e3633a207518?w=600&auto=format&fit=crop&q=80',
+    // Updated image for Areca Palm
+    image: getProductImage('prod-areca', 'Dypsis Lutescens (Areca Palm)', 'Plants'),
     sellerId: 'nursery-1',
     sellerName: 'Green Leaves Oasis',
     rating: 4.7,
@@ -115,7 +121,8 @@ export const INITIAL_PRODUCTS: Product[] = [
       difficulty: 'Easy',
       placement: 'Outdoor kitchen gardens, raised beds, or large vegetable planters.'
     },
-    image: 'https://images.unsplash.com/photo-1592417817098-8f3d6eb19675?w=600&auto=format&fit=crop&q=80',
+    // Updated image for Tomato Seeds (Showing plant/fruit)
+    image: getProductImage('prod-tomato-seeds', 'Heirloom Beefsteak Tomato Seeds', 'Seeds'),
     sellerId: 'nursery-2',
     sellerName: 'Urbano Blooms',
     rating: 4.9,
@@ -135,7 +142,8 @@ export const INITIAL_PRODUCTS: Product[] = [
       difficulty: 'Moderate',
       placement: 'Garden borders, rocky pathways, sunny patio window beds.'
     },
-    image: 'https://images.unsplash.com/photo-1505348325992-df6bc26fdbbc?w=600&auto=format&fit=crop&q=80',
+    // Updated image for Lavender Seeds (Showing plants)
+    image: getProductImage('prod-lavender-seeds', 'French Lavender Seeds (Premium Organic)', 'Seeds'),
     sellerId: 'nursery-1',
     sellerName: 'Green Leaves Oasis',
     rating: 4.4,
@@ -155,7 +163,8 @@ export const INITIAL_PRODUCTS: Product[] = [
       difficulty: 'Easy',
       placement: 'Decorative shelves, side tables, and office desks.'
     },
-    image: 'https://images.unsplash.com/photo-1611244419377-b0a721864635?w=600&auto=format&fit=crop&q=80',
+    // Updated image for Ceramic Pot
+    image: getProductImage('prod-ceramic-pot', 'Nordic Pastel Ceramic Pot', 'Pots'),
     sellerId: 'nursery-2',
     sellerName: 'Urbano Blooms',
     rating: 4.8,
@@ -175,7 +184,8 @@ export const INITIAL_PRODUCTS: Product[] = [
       difficulty: 'Easy',
       placement: 'Gardening shed, tool bag, or backyard hangar.'
     },
-    image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&auto=format&fit=crop&q=80',
+    // Updated image for Digging Trowel
+    image: getProductImage('prod-ergonomic-trowel', 'Cast-Aluminum Digging Trowel', 'Tools'),
     sellerId: 'nursery-1',
     sellerName: 'Green Leaves Oasis',
     rating: 4.7,
@@ -193,7 +203,8 @@ export const INITIAL_USERS: User[] = [
     phone: '+1 (555) 349-2041',
     address: '452 Elmwood Avenue, Apartment 3B, New York, NY',
     joinedDate: '2025-10-12',
-    avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80'
+    // Updated avatar for Sarah (Friendly Female)
+    avatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80'
   } as User,
   {
     id: 'nursery-1',
@@ -204,7 +215,8 @@ export const INITIAL_USERS: User[] = [
     phone: '+1 (555) 892-0943',
     address: '89 Nursery Road, Long Island, NY',
     joinedDate: '2025-02-15',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
+    // Updated avatar for Alex (Male Nursery Owner)
+    avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&auto=format&fit=crop&q=80',
     companyName: 'Green Leaves Oasis',
     verified: true,
     balance: 540.00
@@ -218,7 +230,8 @@ export const INITIAL_USERS: User[] = [
     phone: '+1 (555) 124-9042',
     address: '210 Greenhouses Boulevard, Brooklyn, NY',
     joinedDate: '2025-05-18',
-    avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&auto=format&fit=crop&q=80',
+    // Updated avatar for Priya (Female Nursery Owner)
+    avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80',
     companyName: 'Urbano Blooms',
     verified: false, // Pending verification initially to show Admin Approval!
     balance: 185.50
@@ -232,7 +245,8 @@ export const INITIAL_USERS: User[] = [
     phone: '+1 (555) 438-9901',
     address: 'Brooklyn Heights, NY',
     joinedDate: '2025-01-20',
-    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80',
+    // Updated avatar for Robert (Experienced Male Gardener)
+    avatar: 'https://images.unsplash.com/photo-1570114094297-b2e04e43e742?w=150&auto=format&fit=crop&q=80',
     companyName: 'Robert’s Master Gardening Services',
     verified: true,
     balance: 320.00,
@@ -251,7 +265,8 @@ export const INITIAL_USERS: User[] = [
     phone: '+1 (555) 765-8832',
     address: 'Astoria, Queens, NY',
     joinedDate: '2025-03-01',
-    avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80',
+    // Updated avatar for Elena (Freelance Female Gardener)
+    avatar: 'https://images.unsplash.com/photo-1521119989659-a83eee488004?w=150&auto=format&fit=crop&q=80',
     companyName: 'Lush Greenery & Lawn Design',
     verified: false, // Pending verification initially to show Admin Approval!
     balance: 0.00,
@@ -269,7 +284,8 @@ export const INITIAL_USERS: User[] = [
     phone: '+1 (555) 234-5678',
     address: 'Manhattan Core, NY',
     joinedDate: '2025-04-14',
-    avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&auto=format&fit=crop&q=80',
+    // Updated avatar for Thomas (Modern Male Gardener)
+    avatar: 'https://images.unsplash.com/photo-1520155707862-5b32817388d6?w=150&auto=format&fit=crop&q=80',
     companyName: 'Eco-Lawn Specialists',
     verified: true,
     balance: 150.00,
@@ -287,7 +303,8 @@ export const INITIAL_USERS: User[] = [
     phone: '+1 (555) 100-2000',
     address: 'GreenNest HQ, New York, NY',
     joinedDate: '2025-01-01',
-    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&auto=format&fit=crop&q=80'
+    // Updated avatar for Admin (Corporate Male)
+    avatar: 'https://images.unsplash.com/photo-1519085360754-a8118171f87c?w=150&auto=format&fit=crop&q=80'
   } as User
 ];
 
@@ -302,14 +319,16 @@ export const INITIAL_ORDERS: Order[] = [
         productName: 'Monstera Deliciosa (Swiss Cheese Plant)',
         price: 35,
         quantity: 1,
-        image: 'https://images.unsplash.com/photo-1614594975525-e45190c55d0b?w=600&auto=format&fit=crop&q=80'
+        // MatchUpdated image link for data consistency
+        image: getProductImage('prod-monstera', 'Monstera Deliciosa (Swiss Cheese Plant)', 'Plants')
       },
       {
         productId: 'prod-ceramic-pot',
         productName: 'Nordic Pastel Ceramic Pot',
         price: 19.99,
         quantity: 2,
-        image: 'https://images.unsplash.com/photo-1611244419377-b0a721864635?w=600&auto=format&fit=crop&q=80'
+        // MatchUpdated image link for data consistency
+        image: getProductImage('prod-ceramic-pot', 'Nordic Pastel Ceramic Pot', 'Pots')
       }
     ],
     totalAmount: 74.98,
@@ -329,7 +348,8 @@ export const INITIAL_ORDERS: Order[] = [
         productName: 'Sansevieria Trifasciata (Snake Plant)',
         price: 24,
         quantity: 1,
-        image: 'https://images.unsplash.com/photo-1596547609652-9cf5d8d76921?w=600&auto=format&fit=crop&q=80'
+        // MatchUpdated image link for data consistency
+        image: getProductImage('prod-snake', 'Sansevieria Trifasciata (Snake Plant)', 'Plants')
       }
     ],
     totalAmount: 24.00,
@@ -508,4 +528,3 @@ export const INITIAL_NOTIFICATIONS: AppNotification[] = [
     date: '2026-05-22'
   }
 ];
-

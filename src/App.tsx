@@ -10,6 +10,7 @@ import {
   INITIAL_NOTIFICATIONS
 } from './data/mockData';
 import { Product, User, Order, ServiceBooking, Dispute, Review, CartItem, GardenerService, AppNotification } from './types';
+import { getProductImage, LOCAL_IMAGES } from './utils/productImages';
 import Header from './components/Header';
 import CustomerPortal from './components/CustomerPortal';
 import VendorPortal from './components/VendorPortal';
@@ -38,7 +39,35 @@ export default function App() {
 
   const [products, setProducts] = useState<Product[]>(() => {
     const saved = localStorage.getItem('gn_products');
-    return saved ? JSON.parse(saved) : INITIAL_PRODUCTS;
+    let loaded: Product[] = saved ? JSON.parse(saved) : INITIAL_PRODUCTS;
+    
+    // Automatically upgrade any old/broken image URLs to our gorgeous offline static JPGs/SVGs
+    // so users get instant beautiful renders even with stale local storage!
+    let upgraded = false;
+    loaded = loaded.map(p => {
+      // If we have a local mapped image, enforce it, or if image is broken/unsplash/empty
+      const localMap = LOCAL_IMAGES[p.id];
+      if (localMap && p.image !== localMap) {
+        upgraded = true;
+        return {
+          ...p,
+          image: localMap
+        };
+      }
+      if (!p.image || p.image.includes('images.unsplash.com') || p.image.startsWith('1https') || p.image === '') {
+        upgraded = true;
+        return {
+          ...p,
+          image: getProductImage(p.id, p.name, p.category)
+        };
+      }
+      return p;
+    });
+
+    if (upgraded) {
+      localStorage.setItem('gn_products', JSON.stringify(loaded));
+    }
+    return loaded;
   });
 
   const [orders, setOrders] = useState<Order[]>(() => {
