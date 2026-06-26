@@ -22,9 +22,10 @@ View your app in AI Studio: https://ai.studio/apps/06e82ba2-df1c-44b8-80fd-40d0f
 Here are the mock credentials you can use to log in and explore the different portals of the GreenNest platform:
 
 👤 Customer (Homeowner)
-
 Email: sarah.jenkins@example.com
+
 Password: green123
+
 Role: Browse the spring catalog, add plants or tools to the cart, place orders, book specialists, review products, and file disputes.
 
 🏡 Nursery Vendors
