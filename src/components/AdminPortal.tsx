@@ -1372,7 +1372,7 @@ export default function AdminPortal({
             </div>
 
             {/* 🏷️ GLOBAL TAXONOMY & CATALOG INTEGRITY PRINCIPLES (EXPANSION) */}
-            <div className="bg-[#FAFBF7] rounded-3xl border border-emerald-100 p-6 sm:p-8 space-y-6 mt-8 shadow-sm">
+            <div className="lg:col-span-3 bg-[#FAFBF7] rounded-3xl border border-emerald-100 p-6 sm:p-8 space-y-6 mt-8 shadow-sm">
               <div>
                 <span className="text-[10px] text-emerald-850 font-mono font-bold tracking-widest uppercase block mb-1">
                   Catalog Protocol GS-C12
