@@ -2,6 +2,7 @@
   <h1>🌿 GreenNest</h1>
   <p><strong>A Modern Web Application for Plant Shopping & Gardener Booking</strong></p>
   
+  [![Google AI Studio](https://img.shields.io/badge/Google_AI_Studio-4285F4?style=flat&logo=google)](https://aistudio.google.com/)
   [![React](https://img.shields.io/badge/React-TypeScript-blue.svg?style=flat&logo=react)](https://react.dev/)
   [![Vite](https://img.shields.io/badge/Vite-B73BFE.svg?style=flat&logo=vite)](https://vitejs.dev/)
   [![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC.svg?style=flat&logo=tailwind-css)](https://tailwindcss.com/)
